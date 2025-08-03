@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% block content %}
+  <h1 class="relative inline-block self-start">
+    <span class="z-[5] relative text-preset-xl">{{ page.title }}</span>
+    <span
+      class="absolute bottom-0 left-0 w-full h-[10px] bg-blue-500 translate-y-[-1px]"
+    ></span>
+  </h1>
+{% include "partials/stream_field.html" with streamfield=page.body %}
+{% endblock content %}

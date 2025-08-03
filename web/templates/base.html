@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static '/css/vs2015.min.css' %}" />
+    <title>bayford.dev</title>
+  </head>
+  <body
+    class="h-screen w-full flex py-8 px-1 font-sans bg-neutral-100 {% if request.session.dark_mode %}dark text-white bg-neutral-900{% endif %}"
+  >
+    <div
+      class="mx-auto grid grid-cols-[10px_repeat(4,minmax(60px,160px))_10px] md:grid-cols-[10px_repeat(8,100px)_10px] grid-rows-[100px_1fr_100px]"
+    >
+      {% include 'partials/nav.html' %}
+      <main
+        class="col-start-2 col-end-6 md:col-end-10 pt-0 px-2 flex flex-col gap-4 border-x {% if request.session.dark_mode %}border-neutral-500{% else %}border-neutral-200{% endif %}"
+      >
+        {% block content %} {% endblock %}
+      </main>
+      {% include 'partials/footer.html' %}
+    </div>
+  </body>
+  <script
+    defer
+    type="text/javascript"
+    src="{% static '/js/alpine.min.js' %}"
+  ></script>
+  <script
+    defer
+    type="text/javascript"
+    src="{% static '/js/highlight.min.js' %}"
+  ></script>
+  <script
+    defer
+    type="text/javascript"
+    src="{% static '/js/scripts.js' %}"
+  ></script>
+</html>

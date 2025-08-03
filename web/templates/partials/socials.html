@@ -1,0 +1,11 @@
+<div class="flex gap-4">
+  {% for link in social_links %}
+  <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">
+    <img
+      class="w-8"
+      src="{% if request.session.dark_mode %}{{ link.dark_icon.url }}{% else %}{{ link.light_icon.url }}{% endif %}"
+      alt="{{ link.title }}"
+    />
+  </a>
+  {% endfor %}
+</div>

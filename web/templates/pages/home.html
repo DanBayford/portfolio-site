@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% load wagtailcore_tags %} {% block content %}
+<h1 class="relative inline-block self-start">
+  <span class="z-[5] relative text-preset-xl">{{ page.title }}</span>
+  <span
+    class="absolute bottom-0 left-0 w-full h-[10px] bg-blue-500 translate-y-[-1px]"
+  ></span>
+</h1>
+<div
+  class="text-preset-regular border-b-1 border-neutral-200 dark:border-neutral-500"
+>
+  {{page.body|richtext}}
+  <div class="my-6 flex justify-end">{% include 'partials/socials.html' %}</div>
+</div>
+<h2 class="text-preset-xl">
+  Latest blog posts<span
+    class="ml-2 inline-block w-[40px] h-[20px] border-b-4 border-blue-500"
+  >
+  </span>
+</h2>
+
+{% include 'blog/blog_previews.html' with posts=latest_posts %}
+
+<a class="underline decoration-blue-500 decoration-4" href="/blog/"
+  >View all articles</a
+>
+{% endblock content %}

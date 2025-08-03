@@ -1,0 +1,19 @@
+  {% load wagtailcore_tags %}
+  <ul class="flex flex-col gap-3">
+    {% for post in posts %}
+      <li>
+        <a class="preview__container" href="{{ post.url }}">
+          <h3 class="relative inline-block self-start">
+            <span class="z-[5] relative text-preset-sm">{{ post.title }}</span>
+            <span class="absolute bottom-0 left-0 w-full"></span>
+          </h3>
+          <span class="block mt-2 text-preset-italic text-sm"
+            >{{ post.first_published_at|date:"D d M Y" }}</span
+          >
+          {{ post.preview|richtext }}
+        </a>
+      </li>
+      {% empty %}
+      <li>No posts yet...</li>
+    {% endfor %}
+  </ul>

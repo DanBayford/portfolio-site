@@ -1,0 +1,150 @@
+/* https://github.com/tailwindlabs/tailwindcss/discussions/15855 */
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-md: 820px;
+  --font-display: "DMSans", "sans-serif";
+  --color-neutral-900: hsl(20, 6%, 10%);
+  --color-neutral-800: hsl(20, 5%, 12%);
+  --color-neutral-700: hsl(26, 7%, 19%);
+  --color-neutral-600: hsl(30, 3%, 28%);
+  --color-neutral-400: hsl(0, 1%, 75%);
+  --color-neutral-300: hsl(30, 6%, 86%);
+  --color-neutral-200: hsl(30, 11%, 93%);
+  --color-neutral-100: hsl(30, 33%, 98%);
+  --color-neutral-0: hsl(0, 0%, 100%);
+  --color-blue-200: hsl(207, 94%, 94%);
+  --color-blue-500: hsl(206, 95%, 78%);
+  --color-blue-700: hsl(206, 61%, 66%);
+  --color-blue-800: hsl(206, 45%, 55%);
+  --color-blue-900: hsl(206, 95%, 15%);
+  --color-green-200: hsl(125, 38%, 72%);
+  --color-green-500: hsl(133, 38%, 72%);
+  --color-green-700: hsl(142, 100%, 26%);
+  --color-green-900: hsl(133, 38%, 12%);
+  --color-yellow-200: hsl(40, 100%, 94%);
+  --color-yellow-500: hsl(39, 93%, 73%);
+  --color-yellow-700: hsl(38, 95%, 47%);
+  --color-yellow-900: hsl(38, 92%, 15%);
+  --color-red-400: hsl(4, 86%, 58%);
+  --color-red-600: hsl(4, 74%, 49%);
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 100;
+  src: url("../core/static/fonts/DMSans-Thin.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 200;
+  src: url("../core/static/fonts/DMSans-ExtraLight.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 300;
+  src: url("../core/static/fonts/DMSans-Light.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 400;
+  src: url("../core/static/fonts/DMSans-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: normal;
+  font-weight: 500;
+  src: url("../core/static/fonts/DMSans-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: bold;
+  font-weight: 600;
+  src: url("../core/static/fonts/DMSans-SemiBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: bold;
+  font-weight: 700;
+  src: url("../core/static/fonts/DMSans-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: bold;
+  font-weight: 800;
+  src: url("../core/static/fonts/DMSans-ExtraBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: DMSans;
+  font-style: black;
+  font-weight: 900;
+  src: url("../core/static/fonts/DMSans-Black.ttf") format("ttf");
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  p {
+    @apply my-3 text-[18px];
+  }
+}
+
+/*
+leading = line-height
+tracking = letter-spacing
+*/
+
+@layer components {
+  .text-preset-2xl {
+    @apply text-[40px] leading-[130%] tracking-[-1px] font-bold;
+  }
+  .text-preset-xl {
+    @apply text-[32px] leading-[130%] tracking-[-0.5px] font-bold;
+  }
+  .text-preset-lg {
+    @apply text-[28px] leading-[130%] tracking-[-0.5px] font-bold;
+  }
+  .text-preset-md {
+    @apply text-[24px] leading-[130%] tracking-[-0.5px] font-semibold;
+  }
+  .text-preset-sm {
+    @apply text-[20px] leading-[130%] tracking-[-0.5px] font-semibold;
+  }
+  .text-preset-regular {
+    @apply text-[18px] leading-[150%] tracking-[-0.2px] font-medium;
+  }
+  .text-preset-bold {
+    @apply text-[18px] leading-[150%] tracking-[-0.2px] font-bold;
+  }
+  .text-preset-italic {
+    @apply text-[18px] leading-[150%] tracking-[-0.5px] italic;
+  }
+}
+
+.preview__container:hover h3 span:nth-of-type(2) {
+  @apply h-[5px] bg-blue-500 translate-y-[-2px];
+}
+
+.preview__container:hover p {
+  @apply underline;
+}
+
+.stream_field p {
+  @apply text-[18px] leading-[150%] tracking-[-0.2px] font-medium;
+}
+
+.stream_field figure {
+  @apply flex justify-center;
+}

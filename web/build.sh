@@ -1,0 +1,1 @@
+./tailwindcss --input ./frontend/input.css --output ./core/static/css/styles.css --build

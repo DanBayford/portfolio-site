@@ -1,0 +1,14 @@
+{% load wagtailcore_tags %}
+<div class="flex flex-col gap-2">
+    <a href="{{ self.url }}" target="_blank" rel="noopener">
+      <h3 class="relative inline-block self-start group"> 
+        <span class="z-[5] relative text-preset-italic">{{ self.title }}</span>
+        <span class="absolute bottom-0 left-0 w-full group-hover:h-[2px] bg-blue-500 translate-y-[-3px]"></span></h3>
+    </a>
+    <span >
+        <strong>From:</strong> {{ self.start_date }}
+        <strong>To:</strong> {{ self.end_date }}
+    </span>
+
+    <div>{{ self.description|richtext }}</div>
+</div>

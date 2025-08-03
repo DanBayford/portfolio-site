@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<h1 class="relative inline-block self-start">
+<span class="z-[5] relative text-preset-xl">{{ page.title }}</span>
+<span
+    class="absolute bottom-0 left-0 w-full h-[10px] bg-blue-500 translate-y-[-1px]"
+></span>
+</h1>
+
+<div class="flex justify-between mb-4">
+    <div class="flex gap-2">
+      {% for tag in all_tags %}
+        {% if tag.slug in selected_tags %}
+          <!-- Selected: clicking removes it -->
+          <a href="?{% for t in selected_tags %}{% if t != tag.slug %}tag={{ t }}&{% endif %}{% endfor %}" class="flex items-center justify-center px-2 rounded-lg hover:cursor:pointer {% if request.session.dark_mode %}bg-neutral-200 text-neutral-700{% else %}bg-blue-500 text-neutral-100{% endif %}">
+            {{ tag.name }}
+          </a>
+        {% else %}
+          <!-- Not selected: clicking adds it -->
+          <a href="?{% for t in selected_tags %}tag={{ t }}&{% endfor %}tag={{ tag.slug }}" class="flex items-center justify-center px-2 rounded-lg hover:cursor:pointer {% if request.session.dark_mode %}bg-neutral-500 text-neutral-200{% else %}bg-neutral-200 text-neutral-700{% endif %}">
+            {{ tag.name }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <a href="/blog" class="px-3 py-2 rounded-lg bg-blue-500 hover:cursor:pointer text-white">Clear</a>
+</div>
+
+{% include 'blog/blog_previews.html' with posts=posts %}
+
+<div class="pagination mt-auto flex justify-center items-center gap-4">
+    {% if posts.has_previous %}
+        <a 
+          href="?tag={{ tag }}&page={{ posts.previous_page_number }}" 
+          class="px-3 py-2 rounded-lg bg-neutral-200 hover:cursor:pointer {% if request.session.dark_mode %}bg-neutral-700 text-neutral-200{% else %}bg-neutral-200 text-neutral-700{% endif %}"
+          >Prev</a>
+    {% endif %}
+
+    <span>Page {{ posts.number }} of {{ posts.paginator.num_pages }}</span>
+
+    {% if posts.has_next %}
+        <a 
+          href="?tag={{ tag }}&page={{ posts.next_page_number }}" 
+          class="px-3 py-2 rounded-lg bg-neutral-200 hover:cursor:pointer {% if request.session.dark_mode %}bg-neutral-700 text-neutral-200{% else %}bg-neutral-200 text-neutral-700{% endif %}"
+          >Next</a>
+    {% endif %}
+</div>
+{% endblock content %}

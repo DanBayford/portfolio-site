@@ -1,0 +1,18 @@
+{% load wagtailcore_tags %} 
+{% if streamfield %}
+<div class="stream_field flex flex-col gap-2">
+  {% for block in streamfield %} 
+    {% if block.block_type == "heading" %}
+      <h2 class="relative inline-block self-start mt-6 mb-4"> 
+        <span class="z-[5] relative text-preset-md">{{ block }}</span>
+        <span class="absolute bottom-0 left-0 w-full h-[4px] bg-blue-500 translate-y-[-1px]"></span></h2>
+    {% elif block.block_type == "paragraph"%}
+      {{block}}
+    {% elif block.block_type == "image"%}
+      {{block}} 
+    {% elif block.block_type == "about_block"%}
+     <div class="w-full">{{block}}</div>
+    {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
