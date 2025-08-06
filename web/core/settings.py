@@ -9,8 +9,15 @@ DEBUG = bool(os.environ.get("DEBUG", default=0))
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", '').split(" ")
+ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
 
+CSRF_TRUSTED_ORIGINS = ["http://localhost:1337"]
+
+if not DEBUG:
+    # Makes Django aware it is on an HTTPS connection from load balancer (allows HTTPS only functionality to work)
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    # Should be handled at load balancer but extra safety precaution
+    SECURE_SSL_REDIRECT = True  
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -56,6 +63,7 @@ MIDDLEWARE = [
     "django_browser_reload.middleware.BrowserReloadMiddleware",
 ]
 
+# Required by debug-toolbar
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
@@ -119,12 +127,13 @@ USE_TZ = True
 STATIC_URL = "/static/"
 # Where Django can find static files (dev)
 STATICFILES_DIRS = [str(BASE_DIR / "core/static")]
-# STATIC_ROOT = FOR PROD
+# Where to dump static files via collectstatic
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-WAGTAIL_SITE_NAME = "Dan's Blog"
+WAGTAIL_SITE_NAME = "Dan's Portfolo"
 WAGTAILADMIN_BASE_URL = "https://bayford.dev"
 WAGTAILDOCS_EXTENSIONS = [
     "csv",
