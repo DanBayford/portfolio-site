@@ -3,24 +3,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dan Bayford dev portfolio" />
+    <meta name="keywords" content="web, developer, portfolio, bayford" />
+    <meta name="author" content="bayford.dev" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N62WJQBW');</script>
+    <!-- End Google Tag Manager -->
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="{% static '/img//apple-touch-icon.png' %}"
+      href="{% static '/img/apple-touch-icon.png' %}"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="{% static '/img//favicon-32x32.png' %}"
+      href="{% static '/img/favicon-32x32.png' %}"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="{% static '/img//favicon-16x16.png' %}"
+      href="{% static '/img/favicon-16x16.png' %}"
     />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="{% static 'site.webmanifest' %}" />
     <link rel="stylesheet" href="{% static '/css/styles.css' %}" />
     <link rel="stylesheet" href="{% static '/css/vs2015.min.css' %}" />
     <title>bayford.dev</title>
@@ -28,6 +39,15 @@
   <body
     class="h-screen w-full flex py-8 px-1 font-sans bg-neutral-100 {% if request.session.dark_mode %}dark text-white bg-neutral-900{% endif %}"
   >
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe 
+        src="https://www.googletagmanager.com/ns.html?id=GTM-N62WJQBW"
+        height="0" 
+        width="0" 
+        style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div
       class="mx-auto grid grid-cols-[10px_repeat(4,minmax(60px,160px))_10px] md:grid-cols-[10px_repeat(8,100px)_10px] grid-rows-[100px_1fr_100px]"
     >

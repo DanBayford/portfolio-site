@@ -13,6 +13,8 @@ services:
       - 8000
     env_file:
       - ./env/.env.prod
+    environment:
+      DJANGO_SETTINGS_MODULE: core.settings.prod
     depends_on:
       - db
 

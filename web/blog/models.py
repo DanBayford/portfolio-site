@@ -44,7 +44,6 @@ class BlogIndexPage(Page):
 
         # Filter by tags if required
         selected_tags = request.GET.getlist("tag", "")
-        print("selected_tags", selected_tags)
 
         if selected_tags:
             tags = BlogTag.objects.filter(slug__in=selected_tags)
