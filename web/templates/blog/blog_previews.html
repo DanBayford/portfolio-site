@@ -1,8 +1,8 @@
   {% load wagtailcore_tags %}
   <ul class="flex flex-col gap-3">
     {% for post in posts %}
-      <li>
-        <a class="preview__container" href="{{ post.url }}">
+      <li class="preview__container py-1 px-2 rounded-xl">
+        <a href="{{ post.url }}">
           <h3 class="relative inline-block self-start">
             <span class="z-[5] relative text-preset-sm">{{ post.title }}</span>
             <span class="absolute bottom-0 left-0 w-full"></span>

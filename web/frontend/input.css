@@ -137,11 +137,11 @@ tracking = letter-spacing
 }
 
 .preview__container:hover h3 span:nth-of-type(2) {
-  @apply h-[5px] bg-blue-500 translate-y-[-2px];
+  @apply h-[5px] bg-blue-500 translate-y-[*1px];
 }
 
-.preview__container:hover p {
-  @apply underline;
+.preview__container:hover {
+  @apply bg-neutral-0 dark:bg-neutral-700;
 }
 
 .stream_field p {

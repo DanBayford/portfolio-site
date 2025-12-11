@@ -6,11 +6,13 @@
   <section
     class="flex items-center bg-neutral-0 border rounded-2xl border-neutral-200 dark:bg-neutral-700 dark:border-neutral-500"
   >
-    <img
-      class="p-2 w-20 h-20 border-neutral-200 rounded-2xl"
-      src="{% static '/img/dan.jpeg' %}"
-      alt="Profile picture"
-    />
+    <a href="/">
+      <img
+        class="p-2 w-20 h-20 border-neutral-200 rounded-2xl"
+        src="{% static '/img/dan.jpeg' %}"
+        alt="Profile picture"
+      />
+    </a>
     <nav class="hidden md:block ml-auto mr-8 text-xl">
       <ul class="flex gap-8">
         <li>
@@ -99,14 +101,14 @@
   >
     <a
       href="/"
-      class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+      class="block px-4 py-2 border-b border-gray-200 rounded-t-2xl hover:bg-gray-100 dark:hover:bg-neutral-900"
       >Home</a
     >
     <a
       href="/about"
-      class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100"
+      class="block px-4 py-2 border-b border-gray-200 hover:bg-gray-100 dark:hover:bg-neutral-900"
       >About</a
     >
-    <a href="/blog" class="block px-4 py-2 hover:bg-gray-100">Blog</a>
+    <a href="/blog" class="block px-4 py-2 rounded-b-2xl hover:bg-gray-100 dark:hover:bg-neutral-900">Blog</a>
   </div>
 </div>

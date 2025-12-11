@@ -12,6 +12,9 @@
       {{block}} 
     {% elif block.block_type == "about_block"%}
      <div class="w-full">{{block}}</div>
+     {% if not forloop.last %}
+     <span class="h-1 mb-4 bg-blue-500 w-[30%] mx-auto"></span>
+     {% endif %}
     {% endif %}
   {% endfor %}
 </div>
