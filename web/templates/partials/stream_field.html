@@ -1,15 +1,23 @@
 {% load wagtailcore_tags %} 
+{% load wagtailimages_tags %}
 {% if streamfield %}
 <div class="stream_field flex flex-col gap-1">
   {% for block in streamfield %} 
     {% if block.block_type == "heading" %}
       <h2 class="relative inline-block self-start mt-6 mb-4"> 
-        <span class="z-[5] relative text-preset-md">{{ block }}</span>
-        <span class="absolute bottom-0 left-0 w-full h-[4px] bg-blue-500 translate-y-[-1px]"></span></h2>
+        <span class="z-5 relative text-preset-md">{{ block }}</span>
+        <span class="absolute bottom-0 left-0 w-full h-1 bg-blue-500 translate-y-px"></span></h2>
     {% elif block.block_type == "paragraph"%}
       {{block}}
     {% elif block.block_type == "image"%}
-      {{block}} 
+      <figure class="flex flex-col gap-2">
+      {% image block.value width-1200 %}
+      {% if block.value.description %}
+        <figcaption class="text-lg text-center italic">
+          {{ block.value.description }}
+        </figcaption>
+      {% endif %}
+      </figure>
     {% elif block.block_type == "about_block"%}
      <div class="w-full">{{block}}</div>
      {% if not forloop.last %}

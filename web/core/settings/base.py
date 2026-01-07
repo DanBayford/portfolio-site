@@ -133,6 +133,7 @@ WAGTAILDOCS_EXTENSIONS = [
     "xlsx",
     "zip",
 ]
+WAGTAILIMAGES_JPEG_QUALITY = 90  # 80–90 is usually fine
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

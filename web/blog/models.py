@@ -18,7 +18,7 @@ class BlogIndexPage(Page):
     template = "blog/index.html"
     parent_page_types = ["pages.HomePage"]
     subpage_types = ["blog.BlogPostPage"]
-    paginate_by = 2
+    paginate_by = 8
 
     # Page content
     body = RichTextField(blank=True)
@@ -69,17 +69,6 @@ class BlogIndexPage(Page):
         ctx["all_tags"] = BlogTag.objects.all()
 
         return ctx
-
-
-"""
-Content
-
-Headings
-Images
-Code blocks
-Links
-(Streamfield)
-"""
 
 
 class BlogPostPage(Page):
