@@ -151,3 +151,11 @@ tracking = letter-spacing
 .stream_field figure {
   @apply flex justify-center;
 }
+
+.stream_field ul {
+  @apply list-disc pl-6 marker:text-blue-500 marker:text-2xl;
+}
+
+.stream_field ol {
+  @apply list-decimal pl-6 marker:text-blue-500 marker:font-bold marker:text-xl;
+}

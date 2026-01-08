@@ -849,6 +849,50 @@
   display: flex;
   justify-content: center;
 }
+.stream_field ul {
+  list-style-type: disc;
+  padding-left: calc(var(--spacing) * 6);
+  & *::marker {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  &::marker {
+    font-size: var(--text-2xl);
+    line-height: var(--tw-leading, var(--text-2xl--line-height));
+  }
+  & *::marker {
+    color: var(--color-blue-500);
+  }
+  &::marker {
+    color: var(--color-blue-500);
+  }
+}
+.stream_field ol {
+  list-style-type: decimal;
+  padding-left: calc(var(--spacing) * 6);
+  & *::marker {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  &::marker {
+    font-size: var(--text-xl);
+    line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  & *::marker {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  &::marker {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  & *::marker {
+    color: var(--color-blue-500);
+  }
+  &::marker {
+    color: var(--color-blue-500);
+  }
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
