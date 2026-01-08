@@ -10,10 +10,10 @@
     {% elif block.block_type == "paragraph"%}
       {{block}}
     {% elif block.block_type == "image"%}
-      <figure class="flex flex-col gap-2">
+      <figure class="flex flex-col gap-2 py-4">
       {% image block.value width-1200 %}
       {% if block.value.description %}
-        <figcaption class="text-lg text-center italic">
+        <figcaption class="text-lg text-center italic font-semibold">
           {{ block.value.description }}
         </figcaption>
       {% endif %}
