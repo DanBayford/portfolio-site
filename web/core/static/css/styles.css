@@ -836,7 +836,7 @@
     background-color: var(--color-neutral-700);
   }
 }
-.stream_field p {
+.stream_field p, .stream_field li {
   font-size: 18px;
   --tw-leading: 150%;
   line-height: 150%;

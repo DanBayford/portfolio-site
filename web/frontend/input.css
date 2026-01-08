@@ -144,7 +144,8 @@ tracking = letter-spacing
   @apply bg-neutral-0 dark:bg-neutral-700;
 }
 
-.stream_field p {
+.stream_field p,
+.stream_field li {
   @apply text-[18px] leading-[150%] tracking-[-0.2px] font-medium;
 }
 
